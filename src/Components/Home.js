@@ -1,24 +1,36 @@
 import React from "react";
 import Search from "./Search";
+import Recipes from "./Recipes";
+import api from "../utils/api";
 
 class Home extends React.Component {
   state = {
-    searchTerm: ""
+    searchTerm: "",
+    recipes: ""
   };
 
   onSearch = e => {
-    console.log(e.target.value);
+    const searchTerm = e.target.value;
+
     this.setState({
-      searchTerm: e.target.value
+      searchTerm
     });
   };
 
-  onSubmit = e => {
-    const { searchTerm } = this.state;
-    console.log("i was submitted", searchTerm);
-    e.target.value = "";
-    console.log(e.target.value);
+  handleSearch = e => {
     e.preventDefault();
+    const { searchTerm } = this.state;
+    // in case api needs searchTerm to be separated by commas. As of now
+    // working just fine without it.
+    // searchTerm = searchTerm.split(/[ ,]+/);
+    api
+      .getRecipe(searchTerm)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          recipes: res
+        });
+      });
   };
 
   render() {
@@ -26,7 +38,12 @@ class Home extends React.Component {
     return (
       <div>
         <p>Home</p>
-        <Search onChange={this.onSearch} onSubmit={this.onSubmit} />
+        <Search onChange={this.onSearch} onSubmit={this.handleSearch} />
+        {this.state.recipes === "" ? (
+          <p>Loading..</p>
+        ) : (
+          <Recipes recipes={this.state.recipes} />
+        )}
       </div>
     );
   }
