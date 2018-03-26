@@ -5,15 +5,23 @@ const Search = props => {
 
   return (
     <form onSubmit={onSubmit}>
-      <div>
-        <input
-          id="inputfield"
-          type="text"
-          onChange={onChange}
-          placeholder="Enter Ingredients"
-        />
+      <div className="field has-addons">
+        <div className="control">
+          <input
+            id="inputfield"
+            className="input"
+            type="text"
+            onChange={onChange}
+            placeholder="Enter Ingredients"
+          />
+        </div>
+
+        <div className="control">
+          <button className="button is-primary" onSubmit={onSubmit}>
+            Search
+          </button>
+        </div>
       </div>
-      <button onSubmit={onSubmit}>Search</button>
     </form>
   );
 };

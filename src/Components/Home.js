@@ -30,21 +30,28 @@ class Home extends React.Component {
         this.setState({
           recipes: res
         });
+      })
+      .catch(e => {
+        console.log(e);
       });
   };
 
   render() {
     console.log("search term is: ", this.state.searchTerm);
     return (
-      <div>
-        <p>Home</p>
-        <Search onChange={this.onSearch} onSubmit={this.handleSearch} />
+      <section>
+        <div className="container has-text-centered">
+          <h1 className="title">Find A Recipe</h1>
+          <div className="center-elements">
+            <Search onChange={this.onSearch} onSubmit={this.handleSearch} />
+          </div>
+        </div>
         {this.state.recipes === "" ? (
-          <p>Loading..</p>
+          <p>Search for some nom noms</p>
         ) : (
           <Recipes recipes={this.state.recipes} />
         )}
-      </div>
+      </section>
     );
   }
 }
