@@ -12,6 +12,10 @@ module.exports = {
       }
     );
     return response;
+  },
+  getRecipesWithFilter(searchTerm, filters) {
+    console.log("search term is: ", searchTerm);
+    console.log("filters are...", filters);
   }
 };
 
