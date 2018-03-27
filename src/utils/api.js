@@ -14,8 +14,21 @@ module.exports = {
     return response;
   },
   getRecipesWithFilter(searchTerm, filters) {
-    console.log("search term is: ", searchTerm);
-    console.log("filters are...", filters);
+    let filterTerm = "";
+    filters.forEach(filter => {
+      filterTerm += "&diet=" + filter;
+    });
+    console.log(filterTerm);
+    const response = fetch(
+      `https://api.edamam.com/search?q=${searchTerm}&app_id=${appId}&app_key=${appKey}&from=0&to=10${filterTerm}`,
+      {
+        method: "GET",
+        headers: {
+          Accept: "application/json'"
+        }
+      }
+    );
+    return response;
   }
 };
 
