@@ -1,11 +1,49 @@
+/*
+  --------------
+  Font & Variables
+  --------------
+*/
+@import url("https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911");
+$blue: #43a9c4;
+/*
+  --------------
+  Entire App Settings
+  --------------
+*/
 html {
-  background: teal;
+  background: $blue;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+li,
+input,
+label,
+button {
+  font-family: "Goudy Bookletter 1911", serif;
 }
 
 .center-elements {
   display: flex;
   justify-content: center;
 }
+
+/*
+  --------------
+  CheckBoxes Component
+  --------------
+*/
 
 .filter-options {
   margin: 0 auto;
@@ -19,5 +57,64 @@ html {
 
   input {
     margin-right: 5px;
+  }
+}
+
+/*
+  --------------
+  Recipes Component
+  --------------
+*/
+
+a {
+  color: inherit;
+
+  &:visited {
+    color: none;
+  }
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  article.media {
+    display: inline;
+  }
+
+  .media-left {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 50%;
+  }
+
+  .media-content h3.title {
+    text-align: center;
+  }
+}
+
+/*
+  --------------
+  Footer
+  --------------
+*/
+.footer {
+  margin-top: auto;
+  background-color: $blue;
+  position: relative;
+  padding: 20px;
+
+  p,
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  a:hover {
+    &:hover {
+      color: darken(rgb(162, 157, 154), 20%);
+    }
   }
 }
