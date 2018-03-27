@@ -1,12 +1,21 @@
 # React-Food-Finder
 
-### Things needed to complete
+Search for a recipe by ingredients you enter.
 
-* Functionality first
-* Build main page component with search
-  * Search Component
-  * Individual view pages?
-* Make sure api calls with no issues
-  * After successful calls, work on filters (click events?)
-  * See what options are offered per Search
-* Style front-end once the main functions are working properly
+### Demo
+
+See live [here](https://react-recipe-finder.surge.sh/)
+
+## Built With
+
+* [Font Awesome](https://fontawesome.com/)
+* [Bulma](https://www.bulma.io)
+* [React](https://reactjs.org/)
+
+## License
+
+This project is licensed under the MIT License
+
+## Acknowledgments
+
+* API provided by [Edamam](https://developer.edamam.com/)
