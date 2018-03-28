@@ -31,12 +31,11 @@ const Recipes = props => {
                               {recipe.label}
                             </a>
                           </h3>
-                          {/* Information on recipe start */}
                           <div className="tile is-ancestory">
                             <div className="tile is-parent is-4 is-vertical">
                               <div className="tile is-child">
                                 <h3 className="subtitle">
-                                  <i className="fas fa-info-circle" />{" "}
+                                  <i className="fas fa-info-circle" />
                                   Information
                                 </h3>
                                 <hr />
@@ -57,14 +56,11 @@ const Recipes = props => {
                                 })}
                               </div>
                             </div>
-                            {/* Recipe Information End */}
-
-                            {/* Ingredients Column Start */}
                             <div className="tile is-parent">
                               <article className="tile is-child">
                                 <div className="content">
                                   <h3 className="subtitle">
-                                    <i className="fas fa-clipboard-list" />{" "}
+                                    <i className="fas fa-clipboard-list" />
                                     Ingredients
                                   </h3>
                                   <hr />
@@ -80,7 +76,6 @@ const Recipes = props => {
                                 </div>
                               </article>
                             </div>
-                            {/* Ingredients Column End */}
                           </div>
                         </div>
                       </div>
