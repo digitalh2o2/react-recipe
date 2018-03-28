@@ -48,7 +48,6 @@ const Recipes = props => {
                                 )}
                                 <p>Calories: {Math.floor(recipe.calories)}</p>
                                 <p>Servings: {recipe.yield}</p>
-
                                 <h3>
                                   <i className="fas fa-heart" /> Health Facts
                                 </h3>
