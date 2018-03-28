@@ -8,7 +8,9 @@ const Recipes = props => {
         <div className="column is-10 is-offset-1">
           {recipes.hits.length === 0 ? (
             <div className="container has-text-centered is-size-5">
-              <h3 style={{ color: "white" }}>Couldn't find a recipe!</h3>
+              <h3 style={{ color: "white" }}>
+                Couldn't find a recipe!
+              </h3>
             </div>
           ) : (
             <div>
