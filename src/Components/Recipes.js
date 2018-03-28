@@ -2,15 +2,14 @@ import React from "react";
 
 const Recipes = props => {
   const { recipes } = props;
+
   return (
     <section>
       <div className="columns is-mobile">
         <div className="column is-10 is-offset-1">
           {recipes.hits.length === 0 ? (
-            <div className="container has-text-centered is-size-5">
-              <h3 style={{ color: "white" }}>
-                Couldn't find a recipe!
-              </h3>
+            <div className="has-text-centered is-size-5">
+              <h3 style={{ color: "white" }}>Couldn&apos;t find a recipe!</h3>
             </div>
           ) : (
             <div>
